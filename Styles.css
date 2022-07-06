@@ -1,3 +1,96 @@
-h1{
-    background-color: aqua;
+body{
+    background-color: whitesmoke;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-red: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --text-color: hsl(0, 0%, 35%);
+    --color-gris: hsl(0, 0%, 90%);
+    --font-medium: 500;
+    --font-bold: 700;
+}
+
+header{
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    margin-right: 10px;
+    height: 40px;
+}
+input{
+    display: none;
+}
+
+.checkbtn{
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+.nav-limk{
+    padding: 100px;
+}
+.menu{
+    z-index: 5;
+    position: fixed;
+    background-color: var(--color-gris);
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out;
+}
+.inp:checked + .menu{
+    clip-path: circle(100% at center);
+}
+.home{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.img1{
+    width: 70%;
+    height: 400px;
+    background-color: var(--color-red);
+    grid-column: 1;
+    object-fit: contain;
+}
+.parrafos{
+    margin: 15px;
+}
+.precio{
+    font-size: 2em;
+    color: var(--color-red);
+}
+
+
+
+
+.end{
+    background-color: var(--color-gris);
+    padding: 60px 15px;
 }
