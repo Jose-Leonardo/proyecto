@@ -1,21 +1,32 @@
 body{
     background-color: whitesmoke;
 }
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 :root {
     --color-red: hsl(354, 78%, 60%);
     --button-color: hsl(0, 0%, 17%);
     --button-color-alt: hsl(0, 0%, 21%);
     --text-color: hsl(0, 0%, 35%);
     --color-gris: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
     --font-medium: 500;
     --font-bold: 700;
+    --body-font: 'Roboto', sans-serif;
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
 }
-
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+  }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
 header{
     width: 100%;
     background: transparent;
@@ -51,7 +62,7 @@ input{
 .nav-limk{
     padding: 100px;
 }
-.menu{
+.menu, .menu-carrito{
     z-index: 5;
     position: fixed;
     background-color: var(--color-gris);
@@ -65,9 +76,11 @@ input{
     clip-path: circle(0 at center);
     transition: clip-path 1s ease-in-out;
 }
-.inp:checked + .menu{
+.inp:checked + .menu, .inp:checked + .menu-carrito{
     clip-path: circle(100% at center);
 }
+
+
 .home{
     display: flex;
     flex-direction: row-reverse;
@@ -83,7 +96,6 @@ input{
     margin: 15px;
 }
 .precio{
-    font-size: 2em;
     color: var(--color-red);
 }
 .category{
@@ -95,6 +107,12 @@ input{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2em;
+}
+.stock, .name{
+    font-size: .8em;
+}
+.stock{
+    color: var(--text-color);
 }
 .inventario{
     display: flex;
@@ -108,7 +126,11 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
+    object-fit: contain;
 }
+img {
+    max-width: 100%;
+  }
 .ropa-imagen img{
     height: 200px;
 }
